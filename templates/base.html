@@ -1,0 +1,23 @@
+
+
+{% block content1 %}
+
+<form action="{{ url_for('home') }}" method="POST">
+    {{ form.name.label() }}{{ form.name() }}<br>
+    {{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+
+
+{% endblock %}
+
+<p>------------</p>
+<h3>Navigation</h3>
+<ul>
+    <li><a href="{{ url_for('home')}}">Home</a></li>
+    <li><a href="{{ url_for('all_names')}}">See who all visited.</a></li>
+    <li><a href="{{ url_for('video_info')}}">Search a YouTube video.</a></li>
+    <li><a href="{{ url_for('history')}}">See all video search history.</a></li>
+    <li><a href="{{ url_for('channel_info')}}">Fill out YouTube channel form.</a></li>
+    <li><a href="{{ url_for('all_channels')}}">See YouTube channel form results.</a></li>
+</ul>

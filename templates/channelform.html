@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content1 %}
+
+
+<h1>{% if num_submissions %}{{ num_submissions }}{% else %}0{% endif %} channels saved.</h1>
+<form action = "{{ url_for('channel_info')}}" method="POST">
+    {{ form.username.label() }}{{ form.username() }}<br>
+    {{ form.age.label() }}{{ form.age() }}<br>
+    {{ form.channel.label() }}{{ form.channel() }}<br>
+    {{ form.rating.label() }}{{ form.rating() }}<br>
+    {{ form.subscriber.label() }}{{ form.subscriber() }}<br>
+    {{ form.submit() }}
+    {{ form.hidden_tag() }}
+</form>
+
+{% for message in get_flashed_messages() %}
+  {{ message }}
+{% endfor %}
+
+{% endblock %}

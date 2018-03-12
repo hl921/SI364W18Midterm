@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content1 %}
+
+<h3>Search History:</h3>
+<ul>
+{% for v in videos %}
+  <li>{{ v }} </i></li><br>
+{% endfor %}
+</ul>
+{% if not videos %}
+    There are no search results to show.
+{% endif %}
+
+{% endblock %}

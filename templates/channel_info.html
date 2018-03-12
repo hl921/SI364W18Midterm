@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content1 %}
+
+{% for message in get_flashed_messages() %}
+  {{ message }}
+{% endfor %}
+
+Channels:
+<ul>
+{% for c in channels %}
+  <li>User <b>{{ c[1] }}</b>'s {{ c[0] }}</li> <br>
+
+{% endfor %}
+</ul>
+
+Subscribers:
+<ul>
+{% for s in subscribers %}
+  <li>{{ s }} </i></li><br>
+{% endfor %}
+</ul>
+
+
+{% if not channels %}
+    There are no channels.
+{% endif %}
+
+{% if not subscribers %}
+    There are no subscribers.
+{% endif %}
+
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content1 %}
+
+<ul>
+    {% for r in objects %}
+
+        <li>
+        <h3>Video Name: {{ r['snippet']['title'] }}</h3>
+        <div>Click to view thumbnail <a href="{{ r['snippet']['thumbnails']['high']['url'] }}">here</a>.</div></li>
+        <div>Click to view the <a href="{{ 'https://www.youtube.com/watch?v='+ r['id']['videoId'] }}">video</a>.<div></li>
+
+    {% endfor %}
+</ul>
+<br>
+<h3>Search History:</h3>
+<ul>
+{% for v in videos %}
+  <li>{{ v }} </i></li><br>
+{% endfor %}
+</ul>
+{% if not videos %}
+    There are no search results to show.
+{% endif %}
+
+{% endblock %}
